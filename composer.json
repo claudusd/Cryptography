@@ -1,0 +1,24 @@
+{
+    "name": "claudusd/cryptography",
+    "type": "library",
+    "description": "The secure chat PHP 5.3 library.",
+    "keywords": ["openssl", "encryption", "signature", "cryptography"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Claude Dioudonnat",
+            "email": "claude.dioudonnat@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-0": { 
+        	"Claudusd": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
