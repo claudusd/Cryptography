@@ -1,6 +1,6 @@
 <?php
 
-namespace Claudusd\SecureChat\Encryption;
+namespace Claudusd\Cryptography\Hash;
 
 /**
  * Interface to implement the hash function.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Claudusd\SecureChat\Encryption;
+namespace Claudusd\Cryptography\Encryption;
 
 /**
  * Interface to implement the encryption system for a encryption way.
