@@ -1,7 +1,7 @@
 {
     "name": "claudusd/cryptography",
     "type": "library",
-    "description": "The secure chat PHP 5.3 library.",
+    "description": "A cryptography PHP 5.4 library.",
     "keywords": ["openssl", "encryption", "signature", "cryptography"],
     "license": "MIT",
     "authors": [

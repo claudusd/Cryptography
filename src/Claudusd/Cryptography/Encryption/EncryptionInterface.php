@@ -22,5 +22,5 @@ interface EncryptionInterface
 	 * @param string The key to use to decrypt.
 	 * @return string The value decrypted.
 	 */
-	public function decrypt($message, $key);
+	public function decrypt($message, $key, $passphrase);
 }

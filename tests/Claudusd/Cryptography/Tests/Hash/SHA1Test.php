@@ -27,5 +27,20 @@ class SHA1Test extends CryptographyTest
         $this->assertNotEquals($message, $hashWithoutSalt);
 
         $this->assertNotEquals($hashWithSalt, $hashWithoutSalt);
+
+        $message2 = 'my other message';
+
+        $this->assertNotEquals($hashWithSalt, $hash->hash($message2));
+    }
+
+    public function testHashFileSHA1()
+    {
+        $hash = new SHA1();
+        $this->assertInstanceOf('Claudusd\Cryptography\Hash\HashInterface', $hash);
+        $file = __DIR__.'/hash.txt';
+
+        $hashWithoutSalt = $hash->hash($file);
+
+        $this->assertNotNull($hashWithoutSalt);
     }
 }
