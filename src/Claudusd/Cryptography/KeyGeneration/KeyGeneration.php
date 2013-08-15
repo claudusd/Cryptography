@@ -8,8 +8,14 @@ namespace Claudusd\Cryptography\KeyGeneration;
  */
 abstract class KeyGeneration
 {
+    /**
+     *
+     */
     protected $privateKey;
 
+    /**
+     *
+     */
     protected $publicKey;
 
     /**
