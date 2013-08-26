@@ -11,15 +11,16 @@ class KeyGenerationSHA512Bits4096Test extends CryptographyTest
 {
     public function testKey()
     {
-        $keyGeneration = new KeyGenerationSHA512RSA4096Bits();
+        $keyGeneration1 = new KeyGenerationSHA512RSA4096Bits();
 
-        $this->assertNotNull($keyGeneration->getPublicKey());
-        $this->assertNotNull($keyGeneration->getPrivateKey());
-    }
+        $this->assertNotNull($keyGeneration1->getPublicKey());
+        $this->assertNotNull($keyGeneration1->getPrivateKey());
 
-    public function testFirstException()
-    {
-        $keyGeneration = new KeyGenerationFirstException();
-        $this->setExpectedException('KeyGenerationException');
+        $keyGeneration2 = new KeyGenerationSHA512RSA4096Bits('toto');
+        $this->assertNotNull($keyGeneration2->getPublicKey());
+        $this->assertNotNull($keyGeneration2->getPrivateKey());
+
+        $this->assertNotEquals($keyGeneration1->getPublicKey(), $keyGeneration2->getPublicKey());
+        $this->assertNotEquals($keyGeneration1->getPrivateKey(), $keyGeneration2->getPrivateKey());       
     }
 }

@@ -23,7 +23,7 @@ class EncryptionRSA implements EncryptionInterface
     /**
      * {@inheritdoc}
      */
-    public function decrypt($message, $key, $passphrase)
+    public function decrypt($message, $key, $passphrase = '')
     {
         $privateKey = openssl_pkey_get_private($key, $passphrase);
         openssl_private_decrypt($message, $messageDecrypted, $privateKey);
