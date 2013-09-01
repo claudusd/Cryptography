@@ -21,5 +21,7 @@ class SignatureSignPrivateKeyTest extends CryptographyTest
         $this->assertNotEquals($signatureData1, $signatureData2);
 
         $this->assertTrue($signature->verify($data1, $signatureData1, $key->getPublicKey()));
+
+        $this->assertFalse($signature->verify($data2, $signatureData1, $key->getPublicKey()));
     }
 }
