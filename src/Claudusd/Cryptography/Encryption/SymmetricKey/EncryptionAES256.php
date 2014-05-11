@@ -27,16 +27,16 @@ class EncryptionAES256 implements EncryptionInterface
     /**
      * {@inheritdoc}
      */
-    public function encrypt($value, $key)
+    public function encrypt($data, $key)
     {
-        return openssl_encrypt($value, $this->algorithm, $key, true, $this->iv);
+        return openssl_encrypt($data, $this->algorithm, $key, true, $this->iv);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function decrypt($value, $key, $passphrase = null)
+    public function decrypt($data, $key, $passphrase = null)
     {
-        return openssl_decrypt($value, $this->algorithm, $key, true, $this->iv);
+        return openssl_decrypt($data, $this->algorithm, $key, true, $this->iv);
     }
 }

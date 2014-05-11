@@ -12,10 +12,10 @@ class EncryptionRSA implements EncryptionInterface
     /**
      * {@inheritdoc}
      */
-    public function encrypt($message, $key)
+    public function encrypt($data, $key)
     {
         $publicKey = openssl_pkey_get_public($key);
-        openssl_public_encrypt($message, $messageEncrypted, $publicKey);
+        openssl_public_encrypt($data, $messageEncrypted, $publicKey);
         openssl_free_key($publicKey);
         return $messageEncrypted;
     }
@@ -23,10 +23,10 @@ class EncryptionRSA implements EncryptionInterface
     /**
      * {@inheritdoc}
      */
-    public function decrypt($message, $key, $passphrase = '')
+    public function decrypt($data, $key, $passphrase = '')
     {
         $privateKey = openssl_pkey_get_private($key, $passphrase);
-        openssl_private_decrypt($message, $messageDecrypted, $privateKey);
+        openssl_private_decrypt($data, $messageDecrypted, $privateKey);
         openssl_free_key($privateKey);
         return $messageDecrypted;
     }

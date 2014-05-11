@@ -23,7 +23,7 @@ interface SignatureInterface
      * @param string The signature to verify.
      * @param string The key to use to verify.
      * @param string The passphrase for the key.
-     * @return string True is is authentic else false.
+     * @return bool True is is authentic else false.
      */
     public function verify($data, $signature, $key, $passphrase);
 }
