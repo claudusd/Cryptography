@@ -1,7 +1,14 @@
 <?php
 if (!extension_loaded('openssl')) {
     die(<<<EOT
-openssl has to be enabled!
+openssl has to be enabled!\n
+EOT
+    );
+}
+
+if(!extension_loaded('mcrypt')) {
+    die(<<<EOT
+mcrypt has to be enabled!\n
 EOT
     );
 }

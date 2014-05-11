@@ -15,9 +15,11 @@ class SHA1Test extends CryptographyTest
         $this->assertInstanceOf('Claudusd\Cryptography\Hash\HashInterface', $hash);
 
         $message = 'my message';
-        $salt = 'salt';
+        $salt1 = 'salt1';
+        $salt2 = 'salt2';
 
-        $hashWithSalt = $hash->hash($message, $salt);
+        $hashWithSalt = $hash->hash($message, $salt1);
+        $hashWithAnotherSalt = $hash->hash($message, $salt2);
         $hashWithoutSalt = $hash->hash($message);
 
         $this->assertNotNull($hashWithSalt);
@@ -27,6 +29,7 @@ class SHA1Test extends CryptographyTest
         $this->assertNotEquals($message, $hashWithoutSalt);
 
         $this->assertNotEquals($hashWithSalt, $hashWithoutSalt);
+        $this->assertNotEquals($hashWithSalt, $hashWithAnotherSalt);
 
         $message2 = 'my other message';
 
